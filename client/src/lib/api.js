@@ -26,7 +26,7 @@ async function request(path, { method = "GET", body, auth = true } = {}) {
       body: body ? JSON.stringify(body) : undefined,
     });
   } catch {
-    throw new Error("Cannot reach the server. Is the backend running on port 5000?");
+    throw new Error("Cannot reach the server. Please check your connection and try again.");
   }
 
   let data = null;

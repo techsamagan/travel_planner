@@ -5,12 +5,12 @@ import bcrypt from "bcryptjs";
 import dotenv from "dotenv";
 import crypto from "crypto";
 import pg from "pg";
-import Anthropic from "@anthropic-ai/sdk";
+import OpenAI from "openai";
 
 dotenv.config();
 
 const JWT_SECRET = process.env.JWT_SECRET || "dev-secret-change-me";
-const ANTHROPIC_MODEL = process.env.ANTHROPIC_MODEL || "claude-sonnet-4-6";
+const OPENAI_MODEL = process.env.OPENAI_MODEL || "gpt-4o-mini";
 
 if (process.env.NODE_ENV === "production" && JWT_SECRET === "dev-secret-change-me") {
   console.warn(
@@ -503,17 +503,17 @@ function buildMockItinerary(ctx) {
 }
 
 async function generateWithAI(ctx) {
-  const client = new Anthropic({ apiKey: process.env.ANTHROPIC_API_KEY });
-  const message = await client.messages.create({
-    model: ANTHROPIC_MODEL,
+  const client = new OpenAI({ apiKey: process.env.OPENAI_API_KEY });
+  const completion = await client.chat.completions.create({
+    model: OPENAI_MODEL,
     max_tokens: 4096,
-    system: buildSystemPrompt(),
-    messages: [{ role: "user", content: buildUserPrompt(ctx) }],
+    response_format: { type: "json_object" },
+    messages: [
+      { role: "system", content: buildSystemPrompt() },
+      { role: "user", content: buildUserPrompt(ctx) },
+    ],
   });
-  const text = (message.content || [])
-    .filter((b) => b.type === "text")
-    .map((b) => b.text)
-    .join("\n");
+  const text = completion.choices?.[0]?.message?.content || "";
   const parsed = extractJSON(text);
   if (!parsed) throw new Error("AI response could not be parsed as JSON.");
   return parsed;
@@ -549,7 +549,7 @@ app.post("/api/generate-itinerary", authMiddleware, async (req, res) => {
   try {
     let raw;
     let source;
-    if (process.env.ANTHROPIC_API_KEY) {
+    if (process.env.OPENAI_API_KEY) {
       try {
         raw = await generateWithAI(ctx);
         source = "ai";
@@ -594,7 +594,7 @@ app.get("/api/trips", authMiddleware, async (req, res) => {
 });
 
 app.get("/api/health", (_req, res) =>
-  res.json({ ok: true, aiEnabled: Boolean(process.env.ANTHROPIC_API_KEY) })
+  res.json({ ok: true, aiEnabled: Boolean(process.env.OPENAI_API_KEY) })
 );
 
 export default app;

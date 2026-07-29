@@ -90,8 +90,8 @@ export default function PlannerForm({ onSubmit }) {
               <div
                 className={`flex h-9 w-9 items-center justify-center rounded-full text-sm font-bold transition-all ${
                   i <= step
-                    ? "bg-gradient-to-br from-sky-700 to-blue-600 text-white shadow-lg shadow-sky-300/50"
-                    : "bg-sky-100 dark:bg-white/5 text-slate-600 dark:text-slate-300"
+                    ? "bg-gradient-to-br from-rose-700 to-pink-600 text-white shadow-lg shadow-rose-300/50"
+                    : "bg-rose-100 dark:bg-white/5 text-slate-600 dark:text-slate-300"
                 }`}
               >
                 {i + 1}
@@ -102,9 +102,9 @@ export default function PlannerForm({ onSubmit }) {
             </div>
           ))}
         </div>
-        <div className="h-1.5 overflow-hidden rounded-full bg-sky-100 dark:bg-white/5">
+        <div className="h-1.5 overflow-hidden rounded-full bg-rose-100 dark:bg-white/5">
           <motion.div
-            className="h-full rounded-full bg-gradient-to-r from-sky-700 to-blue-600"
+            className="h-full rounded-full bg-gradient-to-r from-rose-700 to-pink-600"
             initial={false}
             animate={{ width: `${((step + 1) / STEPS.length) * 100}%` }}
             transition={{ duration: 0.4, ease: "easeOut" }}
@@ -144,7 +144,7 @@ export default function PlannerForm({ onSubmit }) {
                       initial={{ opacity: 0, y: -6 }}
                       animate={{ opacity: 1, y: 0 }}
                       exit={{ opacity: 0, y: -6 }}
-                      className="absolute z-20 mt-2 w-full overflow-hidden rounded-xl border border-sky-200 dark:border-white/10 bg-white/95 dark:bg-slate-900/95 backdrop-blur-xl shadow-2xl"
+                      className="absolute z-20 mt-2 w-full overflow-hidden rounded-xl border border-rose-200 dark:border-white/10 bg-white/95 dark:bg-slate-900/95 backdrop-blur-xl shadow-2xl"
                     >
                       {filtered.slice(0, 5).map((d) => (
                         <li key={d}>
@@ -154,9 +154,9 @@ export default function PlannerForm({ onSubmit }) {
                               set("destination", d);
                               setShowSuggest(false);
                             }}
-                            className="flex w-full items-center gap-3 px-4 py-3 text-left text-sm transition-colors hover:bg-sky-100 dark:bg-white/5"
+                            className="flex w-full items-center gap-3 px-4 py-3 text-left text-sm transition-colors hover:bg-rose-100 dark:bg-white/5"
                           >
-                            <MapPin className="h-4 w-4 text-sky-700" />
+                            <MapPin className="h-4 w-4 text-rose-700" />
                             {d}
                           </button>
                         </li>
@@ -178,8 +178,8 @@ export default function PlannerForm({ onSubmit }) {
                     }}
                     className={`rounded-full border px-4 py-2 text-sm transition-all ${
                       form.destination === d
-                        ? "border-sky-400/70 bg-sky-100 dark:bg-white/5 text-sky-700"
-                        : "border-sky-200 dark:border-white/10 bg-sky-100 dark:bg-white/5 text-slate-600 dark:text-slate-300 hover:bg-sky-200 dark:hover:bg-white/10"
+                        ? "border-rose-400/70 bg-rose-100 dark:bg-white/5 text-rose-700"
+                        : "border-rose-200 dark:border-white/10 bg-rose-100 dark:bg-white/5 text-slate-600 dark:text-slate-300 hover:bg-rose-200 dark:hover:bg-white/10"
                     }`}
                   >
                     {d}
@@ -203,12 +203,12 @@ export default function PlannerForm({ onSubmit }) {
                 <button
                   type="button"
                   onClick={() => set("days", Math.max(1, form.days - 1))}
-                  className="flex h-12 w-12 items-center justify-center rounded-full border border-sky-200 dark:border-white/10 bg-sky-100 dark:bg-white/5 text-2xl transition-all hover:bg-sky-200 dark:hover:bg-white/10 active:scale-95"
+                  className="flex h-12 w-12 items-center justify-center rounded-full border border-rose-200 dark:border-white/10 bg-rose-100 dark:bg-white/5 text-2xl transition-all hover:bg-rose-200 dark:hover:bg-white/10 active:scale-95"
                 >
                   −
                 </button>
                 <div className="text-center">
-                  <div className="bg-gradient-to-r from-sky-700 to-blue-600 bg-clip-text text-7xl font-extrabold text-transparent">
+                  <div className="bg-gradient-to-r from-rose-700 to-pink-600 bg-clip-text text-7xl font-extrabold text-transparent">
                     {form.days}
                   </div>
                   <p className="text-sm text-slate-600 dark:text-slate-300">{form.days === 1 ? "day" : "days"}</p>
@@ -216,7 +216,7 @@ export default function PlannerForm({ onSubmit }) {
                 <button
                   type="button"
                   onClick={() => set("days", Math.min(14, form.days + 1))}
-                  className="flex h-12 w-12 items-center justify-center rounded-full border border-sky-200 dark:border-white/10 bg-sky-100 dark:bg-white/5 text-2xl transition-all hover:bg-sky-200 dark:hover:bg-white/10 active:scale-95"
+                  className="flex h-12 w-12 items-center justify-center rounded-full border border-rose-200 dark:border-white/10 bg-rose-100 dark:bg-white/5 text-2xl transition-all hover:bg-rose-200 dark:hover:bg-white/10 active:scale-95"
                 >
                   +
                 </button>
@@ -227,7 +227,7 @@ export default function PlannerForm({ onSubmit }) {
                 max={14}
                 value={form.days}
                 onChange={(e) => set("days", Number(e.target.value))}
-                className="mt-8 w-full accent-sky-500"
+                className="mt-8 w-full accent-rose-500"
               />
               <div className="mt-2 flex justify-between text-xs text-slate-600 dark:text-slate-300">
                 <span>1 day</span>
@@ -256,11 +256,11 @@ export default function PlannerForm({ onSubmit }) {
                       onClick={() => set("travelStyle", s.value)}
                       className={`flex flex-col items-center gap-2 rounded-2xl border p-4 text-center transition-all ${
                         active
-                          ? "border-sky-400/70 bg-sky-100 dark:bg-white/5 shadow-lg shadow-sky-300/40"
-                          : "border-sky-200 dark:border-white/10 bg-sky-100 dark:bg-white/5 hover:bg-sky-200 dark:hover:bg-white/10"
+                          ? "border-rose-400/70 bg-rose-100 dark:bg-white/5 shadow-lg shadow-rose-300/40"
+                          : "border-rose-200 dark:border-white/10 bg-rose-100 dark:bg-white/5 hover:bg-rose-200 dark:hover:bg-white/10"
                       }`}
                     >
-                      <s.icon className={`h-7 w-7 ${active ? "text-sky-700" : "text-slate-600 dark:text-slate-300"}`} />
+                      <s.icon className={`h-7 w-7 ${active ? "text-rose-700" : "text-slate-600 dark:text-slate-300"}`} />
                       <span className="text-sm font-semibold">{s.value}</span>
                       <span className="text-xs text-slate-600 dark:text-slate-300">{s.desc}</span>
                     </button>
@@ -290,11 +290,11 @@ export default function PlannerForm({ onSubmit }) {
                       onClick={() => set("companion", c.value)}
                       className={`flex flex-col items-center gap-2 rounded-2xl border p-4 text-center transition-all ${
                         active
-                          ? "border-sky-400/70 bg-sky-100 dark:bg-white/5 shadow-lg shadow-sky-300/40"
-                          : "border-sky-200 dark:border-white/10 bg-sky-100 dark:bg-white/5 hover:bg-sky-200 dark:hover:bg-white/10"
+                          ? "border-rose-400/70 bg-rose-100 dark:bg-white/5 shadow-lg shadow-rose-300/40"
+                          : "border-rose-200 dark:border-white/10 bg-rose-100 dark:bg-white/5 hover:bg-rose-200 dark:hover:bg-white/10"
                       }`}
                     >
-                      <c.icon className={`h-7 w-7 ${active ? "text-sky-700" : "text-slate-600 dark:text-slate-300"}`} />
+                      <c.icon className={`h-7 w-7 ${active ? "text-rose-700" : "text-slate-600 dark:text-slate-300"}`} />
                       <span className="text-sm font-semibold">{c.value}</span>
                       <span className="text-xs text-slate-600 dark:text-slate-300">{c.desc}</span>
                     </button>
@@ -303,7 +303,7 @@ export default function PlannerForm({ onSubmit }) {
               </div>
 
               {/* Summary */}
-              <div className="mt-6 rounded-2xl border border-sky-200 dark:border-white/10 bg-sky-100 dark:bg-white/5 p-4 text-sm">
+              <div className="mt-6 rounded-2xl border border-rose-200 dark:border-white/10 bg-rose-100 dark:bg-white/5 p-4 text-sm">
                 <p className="mb-2 font-semibold text-slate-700 dark:text-slate-200">Trip summary</p>
                 <div className="grid grid-cols-2 gap-2 text-slate-600 dark:text-slate-300">
                   <span>📍 {form.destination || "—"}</span>
@@ -346,7 +346,7 @@ export default function PlannerForm({ onSubmit }) {
 function StepHeader({ icon: Icon, title, subtitle }) {
   return (
     <div className="mb-6 flex items-center gap-4">
-      <span className="flex h-12 w-12 items-center justify-center rounded-2xl bg-gradient-to-br from-sky-700 to-blue-600 shadow-lg shadow-sky-300/50">
+      <span className="flex h-12 w-12 items-center justify-center rounded-2xl bg-gradient-to-br from-rose-700 to-pink-600 shadow-lg shadow-rose-300/50">
         <Icon className="h-6 w-6 text-white" />
       </span>
       <div>

@@ -30,13 +30,13 @@ const features = [
     icon: Brain,
     title: "AI Personalization",
     desc: "Every itinerary is crafted around your vibe, pace, and travel companions — not a generic template.",
-    color: "from-sky-700 to-purple-500",
+    color: "from-rose-700 to-purple-500",
   },
   {
     icon: RouteIcon,
     title: "Real-time Routing",
     desc: "Smart day-by-day sequencing that minimizes backtracking and maximizes your time on the ground.",
-    color: "from-cyan-500 to-blue-500",
+    color: "from-fuchsia-500 to-pink-500",
   },
   {
     icon: Wallet,
@@ -91,7 +91,7 @@ export default function Landing() {
       <section className="relative z-10 mx-auto max-w-6xl px-6 pb-24 pt-40 text-center md:pt-48">
         <motion.div variants={fadeUp} initial="hidden" animate="show" custom={0}>
           <span className="inline-flex items-center gap-2 rounded-full glass px-4 py-1.5 text-sm text-slate-600 dark:text-slate-300">
-            <Sparkles className="h-4 w-4 text-sky-700" />
+            <Sparkles className="h-4 w-4 text-rose-700" />
             Powered by frontier AI travel intelligence
           </span>
         </motion.div>
@@ -104,7 +104,7 @@ export default function Landing() {
           className="mx-auto mt-8 max-w-4xl text-5xl font-extrabold leading-[1.05] tracking-tight md:text-7xl"
         >
           Your Next Adventure,{" "}
-          <span className="bg-gradient-to-r from-sky-700 via-blue-500 to-blue-600 bg-clip-text text-transparent">
+          <span className="bg-gradient-to-r from-rose-700 via-pink-500 to-pink-600 bg-clip-text text-transparent">
             Engineered by AI
           </span>
         </motion.h1>
@@ -168,22 +168,22 @@ export default function Landing() {
 
           <div className="overflow-hidden rounded-3xl glass p-2 shadow-2xl">
             <div className="rounded-2xl bg-white/80 dark:bg-slate-900/80 p-6 text-left">
-              <div className="flex items-center justify-between border-b border-sky-200 dark:border-white/10 pb-4">
+              <div className="flex items-center justify-between border-b border-rose-200 dark:border-white/10 pb-4">
                 <div>
                   <p className="text-sm text-slate-600 dark:text-slate-300">Day 2 · Cultural</p>
                   <h3 className="text-xl font-bold">Temples & Tea Ceremony</h3>
                 </div>
-                <span className="rounded-full bg-sky-100 dark:bg-white/5 px-3 py-1 text-xs font-medium text-sky-700">
+                <span className="rounded-full bg-rose-100 dark:bg-white/5 px-3 py-1 text-xs font-medium text-rose-700">
                   Generated in 18s
                 </span>
               </div>
               <div className="mt-4 space-y-3">
                 {[
                   { time: "Morning", title: "Fushimi Inari Shrine hike", icon: MapPin, tint: "text-amber-400" },
-                  { time: "Afternoon", title: "Gion district & matcha tasting", icon: Sparkles, tint: "text-sky-700" },
+                  { time: "Afternoon", title: "Gion district & matcha tasting", icon: Sparkles, tint: "text-rose-700" },
                   { time: "Evening", title: "Kaiseki dinner by the river", icon: Star, tint: "text-pink-400" },
                 ].map((row) => (
-                  <div key={row.time} className="flex items-center gap-4 rounded-xl bg-sky-100 dark:bg-white/5 p-3">
+                  <div key={row.time} className="flex items-center gap-4 rounded-xl bg-rose-100 dark:bg-white/5 p-3">
                     <row.icon className={`h-5 w-5 ${row.tint}`} />
                     <div>
                       <p className="text-xs text-slate-600 dark:text-slate-300">{row.time}</p>
@@ -231,7 +231,7 @@ export default function Landing() {
               viewport={{ once: true }}
               custom={i}
               whileHover={{ y: -6 }}
-              className="group rounded-2xl glass p-6 transition-shadow hover:shadow-2xl hover:shadow-sky-300/30"
+              className="group rounded-2xl glass p-6 transition-shadow hover:shadow-2xl hover:shadow-rose-300/30"
             >
               <span className={`flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br ${f.color} shadow-lg`}>
                 <f.icon className="h-6 w-6 text-white" />
@@ -261,10 +261,10 @@ export default function Landing() {
                 custom={i}
                 className="relative text-center"
               >
-                <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-2xl bg-gradient-to-br from-sky-700 to-blue-600 shadow-xl shadow-sky-300/50">
+                <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-2xl bg-gradient-to-br from-rose-700 to-pink-600 shadow-xl shadow-rose-300/50">
                   <s.icon className="h-7 w-7 text-white" />
                 </div>
-                <p className="mt-2 text-sm font-bold text-sky-700">Step {i + 1}</p>
+                <p className="mt-2 text-sm font-bold text-rose-700">Step {i + 1}</p>
                 <h3 className="mt-1 text-xl font-semibold">{s.title}</h3>
                 <p className="mt-2 text-sm text-slate-600 dark:text-slate-300">{s.desc}</p>
               </motion.div>
@@ -289,8 +289,8 @@ export default function Landing() {
 
         {/* Marquee */}
         <div className="group relative mt-14 overflow-hidden">
-          <div className="pointer-events-none absolute inset-y-0 left-0 z-10 w-24 bg-gradient-to-r from-[#e9f4ff] dark:from-slate-950 to-transparent" />
-          <div className="pointer-events-none absolute inset-y-0 right-0 z-10 w-24 bg-gradient-to-l from-[#e9f4ff] dark:from-slate-950 to-transparent" />
+          <div className="pointer-events-none absolute inset-y-0 left-0 z-10 w-24 bg-gradient-to-r from-[#fdf3ee] dark:from-[#0d070b] to-transparent" />
+          <div className="pointer-events-none absolute inset-y-0 right-0 z-10 w-24 bg-gradient-to-l from-[#fdf3ee] dark:from-[#0d070b] to-transparent" />
           <div className="flex w-max gap-6 animate-marquee group-hover:[animation-play-state:paused]">
             {[...testimonials, ...testimonials].map((t, i) => (
               <div key={i} className="w-80 shrink-0 rounded-2xl glass p-6 text-left">
@@ -301,7 +301,7 @@ export default function Landing() {
                 </div>
                 <p className="mt-4 text-sm leading-relaxed text-slate-600 dark:text-slate-300">“{t.quote}”</p>
                 <div className="mt-5 flex items-center gap-3">
-                  <span className="flex h-10 w-10 items-center justify-center rounded-full bg-gradient-to-br from-sky-700 to-blue-600 text-sm font-bold text-white">
+                  <span className="flex h-10 w-10 items-center justify-center rounded-full bg-gradient-to-br from-rose-700 to-pink-600 text-sm font-bold text-white">
                     {t.avatar}
                   </span>
                   <div>
@@ -322,10 +322,10 @@ export default function Landing() {
           initial="hidden"
           whileInView="show"
           viewport={{ once: true }}
-          className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-sky-700 via-blue-500 to-blue-600 p-12 text-center shadow-2xl shadow-sky-300/50 md:p-16"
+          className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-rose-700 via-pink-500 to-pink-600 p-12 text-center shadow-2xl shadow-rose-300/50 md:p-16"
         >
-          <div className="absolute -right-10 -top-10 h-40 w-40 rounded-full bg-sky-200 dark:bg-white/10 blur-2xl" />
-          <div className="absolute -bottom-10 -left-10 h-40 w-40 rounded-full bg-sky-200 dark:bg-white/10 blur-2xl" />
+          <div className="absolute -right-10 -top-10 h-40 w-40 rounded-full bg-rose-200 dark:bg-white/10 blur-2xl" />
+          <div className="absolute -bottom-10 -left-10 h-40 w-40 rounded-full bg-rose-200 dark:bg-white/10 blur-2xl" />
           <h2 className="relative text-4xl font-bold tracking-tight text-white md:text-5xl">
             Ready to plan your next escape?
           </h2>
@@ -335,7 +335,7 @@ export default function Landing() {
           <div className="relative mt-8 flex justify-center">
             <Link
               to="/auth"
-              className="inline-flex items-center gap-2 rounded-xl bg-white px-8 py-4 text-base font-bold text-sky-700 shadow-lg transition-transform hover:scale-105 active:scale-95"
+              className="inline-flex items-center gap-2 rounded-xl bg-white px-8 py-4 text-base font-bold text-rose-700 shadow-lg transition-transform hover:scale-105 active:scale-95"
             >
               Start Planning Free <ArrowRight className="h-5 w-5" />
             </Link>
@@ -344,19 +344,19 @@ export default function Landing() {
       </section>
 
       {/* -------------------------------------------------------------- Footer */}
-      <footer className="relative z-10 border-t border-sky-200 dark:border-white/10">
+      <footer className="relative z-10 border-t border-rose-200 dark:border-white/10">
         <div className="mx-auto flex max-w-6xl flex-col items-center justify-between gap-6 px-6 py-10 md:flex-row">
           <div className="flex items-center gap-2 font-bold">
-            <span className="flex h-8 w-8 items-center justify-center rounded-lg bg-gradient-to-br from-sky-700 to-blue-600">
+            <span className="flex h-8 w-8 items-center justify-center rounded-lg bg-gradient-to-br from-rose-700 to-pink-600">
               <Plane className="h-4 w-4 text-white" />
             </span>
             Wanderwise
           </div>
           <div className="flex gap-8 text-sm text-slate-600 dark:text-slate-300">
-            <a href="#features" className="hover:text-sky-700">Features</a>
-            <a href="#how" className="hover:text-sky-700">How it works</a>
-            <a href="#reviews" className="hover:text-sky-700">Reviews</a>
-            <Link to="/auth" className="hover:text-sky-700">Sign in</Link>
+            <a href="#features" className="hover:text-rose-700">Features</a>
+            <a href="#how" className="hover:text-rose-700">How it works</a>
+            <a href="#reviews" className="hover:text-rose-700">Reviews</a>
+            <Link to="/auth" className="hover:text-rose-700">Sign in</Link>
           </div>
           <p className="text-sm text-slate-600 dark:text-slate-300">© {new Date().getFullYear()} Wanderwise. All rights reserved.</p>
         </div>

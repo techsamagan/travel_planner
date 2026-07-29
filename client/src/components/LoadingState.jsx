@@ -26,12 +26,12 @@ export default function LoadingState({ destination }) {
       <div className="rounded-3xl glass p-8 text-center">
         <div className="relative mx-auto mb-6 h-24 w-24">
           <motion.div
-            className="absolute inset-0 rounded-full border-2 border-dashed border-sky-400/50"
+            className="absolute inset-0 rounded-full border-2 border-dashed border-rose-400/50"
             animate={{ rotate: 360 }}
             transition={{ duration: 8, repeat: Infinity, ease: "linear" }}
           />
           <motion.div
-            className="absolute inset-3 flex items-center justify-center rounded-full bg-gradient-to-br from-sky-700 to-blue-600 shadow-xl shadow-sky-300/60"
+            className="absolute inset-3 flex items-center justify-center rounded-full bg-gradient-to-br from-rose-700 to-pink-600 shadow-xl shadow-rose-300/60"
             animate={{ scale: [1, 1.08, 1] }}
             transition={{ duration: 1.6, repeat: Infinity, ease: "easeInOut" }}
           >
@@ -61,7 +61,7 @@ export default function LoadingState({ destination }) {
             <span
               key={i}
               className={`h-1.5 rounded-full transition-all duration-500 ${
-                i === phase ? "w-8 bg-sky-500" : "w-1.5 bg-white/15"
+                i === phase ? "w-8 bg-rose-500" : "w-1.5 bg-white/15"
               }`}
             />
           ))}
@@ -72,19 +72,19 @@ export default function LoadingState({ destination }) {
       <div className="mt-6 space-y-4">
         <div className="flex gap-3">
           {[...Array(4)].map((_, i) => (
-            <div key={i} className="shimmer h-9 flex-1 rounded-xl bg-sky-100 dark:bg-white/5" />
+            <div key={i} className="shimmer h-9 flex-1 rounded-xl bg-rose-100 dark:bg-white/5" />
           ))}
         </div>
         {[...Array(3)].map((_, i) => (
           <div key={i} className="rounded-2xl glass p-5">
-            <div className="shimmer mb-4 h-5 w-1/3 rounded bg-sky-100 dark:bg-white/5" />
+            <div className="shimmer mb-4 h-5 w-1/3 rounded bg-rose-100 dark:bg-white/5" />
             <div className="space-y-3">
               {[...Array(3)].map((_, j) => (
                 <div key={j} className="flex items-center gap-4">
-                  <div className="shimmer h-10 w-10 shrink-0 rounded-xl bg-sky-100 dark:bg-white/5" />
+                  <div className="shimmer h-10 w-10 shrink-0 rounded-xl bg-rose-100 dark:bg-white/5" />
                   <div className="flex-1 space-y-2">
-                    <div className="shimmer h-3 w-1/4 rounded bg-sky-100 dark:bg-white/5" />
-                    <div className="shimmer h-4 w-3/4 rounded bg-sky-100 dark:bg-white/5" />
+                    <div className="shimmer h-3 w-1/4 rounded bg-rose-100 dark:bg-white/5" />
+                    <div className="shimmer h-4 w-3/4 rounded bg-rose-100 dark:bg-white/5" />
                   </div>
                 </div>
               ))}

@@ -8,9 +8,9 @@ import { Compass } from "lucide-react";
 
 function FullScreenLoader() {
   return (
-    <div className="flex min-h-screen items-center justify-center bg-sky-50 dark:bg-slate-950">
+    <div className="flex min-h-screen items-center justify-center bg-rose-50 dark:bg-slate-950">
       <div className="flex flex-col items-center gap-4">
-        <Compass className="h-10 w-10 animate-spin text-sky-700" />
+        <Compass className="h-10 w-10 animate-spin text-rose-700" />
         <p className="text-sm text-slate-600 dark:text-slate-300">Loading Wanderwise…</p>
       </div>
     </div>

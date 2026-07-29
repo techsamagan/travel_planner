@@ -21,8 +21,8 @@ import {
 
 const TIME_META = {
   Morning: { icon: Sunrise, ring: "from-amber-400 to-orange-500", tint: "text-amber-700 dark:text-amber-400" },
-  Afternoon: { icon: Sun, ring: "from-sky-700 to-blue-600", tint: "text-sky-700" },
-  Evening: { icon: Moon, ring: "from-sky-700 to-purple-500", tint: "text-sky-700" },
+  Afternoon: { icon: Sun, ring: "from-rose-700 to-pink-600", tint: "text-rose-700" },
+  Evening: { icon: Moon, ring: "from-rose-700 to-purple-500", tint: "text-rose-700" },
 };
 
 const ACTIVITY_ICONS = [Camera, Coffee, MapPin, Wine, UtensilsCrossed, Ticket];
@@ -60,7 +60,7 @@ export default function ItineraryView({ data, source, onReset }) {
       >
         <div className="flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between">
           <div>
-            <span className="inline-flex items-center gap-2 rounded-full bg-sky-100 dark:bg-white/5 px-3 py-1 text-xs font-medium text-sky-700">
+            <span className="inline-flex items-center gap-2 rounded-full bg-rose-100 dark:bg-white/5 px-3 py-1 text-xs font-medium text-rose-700">
               <Sparkles className="h-3.5 w-3.5" />
               {source === "ai" ? "AI-generated" : "Sample itinerary"}
             </span>
@@ -92,7 +92,7 @@ export default function ItineraryView({ data, source, onReset }) {
             {tab === t.key && (
               <motion.span
                 layoutId="tab-pill"
-                className="absolute inset-0 rounded-xl bg-gradient-to-r from-sky-700 to-blue-600 shadow-lg shadow-sky-300/50"
+                className="absolute inset-0 rounded-xl bg-gradient-to-r from-rose-700 to-pink-600 shadow-lg shadow-rose-300/50"
                 transition={{ type: "spring", stiffness: 380, damping: 32 }}
               />
             )}
@@ -124,11 +124,11 @@ export default function ItineraryView({ data, source, onReset }) {
                     onClick={() => setActiveDay(d.dayNumber)}
                     className={`shrink-0 rounded-2xl border p-4 text-left transition-all lg:w-full ${
                       active
-                        ? "border-sky-400/70 bg-sky-100 dark:bg-white/5 shadow-lg shadow-sky-300/40"
-                        : "border-sky-200 dark:border-white/10 bg-sky-100 dark:bg-white/5 hover:bg-sky-200 dark:hover:bg-white/10"
+                        ? "border-rose-400/70 bg-rose-100 dark:bg-white/5 shadow-lg shadow-rose-300/40"
+                        : "border-rose-200 dark:border-white/10 bg-rose-100 dark:bg-white/5 hover:bg-rose-200 dark:hover:bg-white/10"
                     }`}
                   >
-                    <p className={`text-xs font-bold ${active ? "text-sky-700" : "text-slate-600 dark:text-slate-300"}`}>
+                    <p className={`text-xs font-bold ${active ? "text-rose-700" : "text-slate-600 dark:text-slate-300"}`}>
                       DAY {d.dayNumber}
                     </p>
                     <p className="mt-0.5 whitespace-nowrap text-sm font-semibold lg:whitespace-normal">{d.theme}</p>
@@ -149,17 +149,17 @@ export default function ItineraryView({ data, source, onReset }) {
                 >
                   <div className="mb-6 flex items-center justify-between">
                     <div>
-                      <p className="text-sm font-bold text-sky-700">DAY {day.dayNumber}</p>
+                      <p className="text-sm font-bold text-rose-700">DAY {day.dayNumber}</p>
                       <h3 className="text-2xl font-bold">{day.theme}</h3>
                     </div>
-                    <span className="rounded-full bg-sky-100 dark:bg-white/5 px-3 py-1 text-sm text-slate-600 dark:text-slate-300">
+                    <span className="rounded-full bg-rose-100 dark:bg-white/5 px-3 py-1 text-sm text-slate-600 dark:text-slate-300">
                       ${day.activities.reduce((n, a) => n + a.cost, 0)} est.
                     </span>
                   </div>
 
                   <div className="relative space-y-6 pl-2">
                     {/* vertical line */}
-                    <div className="absolute bottom-2 left-[26px] top-2 w-px bg-gradient-to-b from-sky-400/60 via-white/10 to-transparent" />
+                    <div className="absolute bottom-2 left-[26px] top-2 w-px bg-gradient-to-b from-rose-400/60 via-white/10 to-transparent" />
                     {day.activities.map((a, i) => {
                       const meta = TIME_META[a.time] || TIME_META.Morning;
                       const ActIcon = activityIcon(a.title, a.time);
@@ -176,7 +176,7 @@ export default function ItineraryView({ data, source, onReset }) {
                           >
                             <ActIcon className="h-5 w-5 text-white" />
                           </span>
-                          <div className="flex-1 rounded-2xl border border-sky-200 dark:border-white/10 bg-sky-100 dark:bg-white/5 p-4 transition-colors hover:bg-sky-200/70 dark:hover:bg-white/[0.07]">
+                          <div className="flex-1 rounded-2xl border border-rose-200 dark:border-white/10 bg-rose-100 dark:bg-white/5 p-4 transition-colors hover:bg-rose-200/70 dark:hover:bg-white/[0.07]">
                             <div className="flex items-start justify-between gap-3">
                               <div>
                                 <p className={`flex items-center gap-1.5 text-xs font-semibold ${meta.tint}`}>
@@ -189,7 +189,7 @@ export default function ItineraryView({ data, source, onReset }) {
                                   ${a.cost}
                                 </span>
                               ) : (
-                                <span className="shrink-0 rounded-lg bg-sky-100 dark:bg-white/5 px-2.5 py-1 text-xs font-medium text-slate-600 dark:text-slate-300">
+                                <span className="shrink-0 rounded-lg bg-rose-100 dark:bg-white/5 px-2.5 py-1 text-xs font-medium text-slate-600 dark:text-slate-300">
                                   Free
                                 </span>
                               )}
@@ -246,12 +246,12 @@ export default function ItineraryView({ data, source, onReset }) {
                     key={i}
                     onClick={() => setChecked((c) => ({ ...c, [i]: !c[i] }))}
                     className={`flex items-center gap-3 rounded-xl border p-3.5 text-left transition-all ${
-                      on ? "border-emerald-300 dark:border-emerald-400/40 bg-emerald-50 dark:bg-emerald-500/15" : "border-sky-200 dark:border-white/10 bg-sky-100 dark:bg-white/5 hover:bg-sky-200 dark:hover:bg-white/10"
+                      on ? "border-emerald-300 dark:border-emerald-400/40 bg-emerald-50 dark:bg-emerald-500/15" : "border-rose-200 dark:border-white/10 bg-rose-100 dark:bg-white/5 hover:bg-rose-200 dark:hover:bg-white/10"
                     }`}
                   >
                     <span
                       className={`flex h-6 w-6 shrink-0 items-center justify-center rounded-md border transition-all ${
-                        on ? "border-emerald-500 bg-emerald-500" : "border-sky-300 dark:border-white/20"
+                        on ? "border-emerald-500 bg-emerald-500" : "border-rose-300 dark:border-white/20"
                       }`}
                     >
                       {on && <Check className="h-4 w-4 text-white" />}
@@ -270,8 +270,8 @@ export default function ItineraryView({ data, source, onReset }) {
 
 function Stat({ icon: Icon, label, value }) {
   return (
-    <div className="rounded-2xl border border-sky-200 dark:border-white/10 bg-sky-100 dark:bg-white/5 p-4">
-      <Icon className="h-5 w-5 text-sky-700" />
+    <div className="rounded-2xl border border-rose-200 dark:border-white/10 bg-rose-100 dark:bg-white/5 p-4">
+      <Icon className="h-5 w-5 text-rose-700" />
       <p className="mt-2 text-2xl font-bold">{value}</p>
       <p className="text-xs text-slate-600 dark:text-slate-300">{label}</p>
     </div>
@@ -282,8 +282,8 @@ function BudgetPanel({ budget, days }) {
   const rows = useMemo(
     () => [
       { key: "food", label: "Food & dining", icon: UtensilsCrossed, color: "from-amber-400 to-orange-500", value: budget.food },
-      { key: "activities", label: "Activities", icon: Ticket, color: "from-cyan-400 to-blue-500", value: budget.activities },
-      { key: "stay", label: "Lodging", icon: BedDouble, color: "from-sky-700 to-purple-500", value: budget.stay },
+      { key: "activities", label: "Activities", icon: Ticket, color: "from-fuchsia-400 to-pink-500", value: budget.activities },
+      { key: "stay", label: "Lodging", icon: BedDouble, color: "from-rose-700 to-purple-500", value: budget.stay },
     ],
     [budget]
   );
@@ -310,7 +310,7 @@ function BudgetPanel({ budget, days }) {
                     ${r.value.toLocaleString()} <span className="text-slate-600 dark:text-slate-300">· {pct}%</span>
                   </span>
                 </div>
-                <div className="h-3 overflow-hidden rounded-full bg-sky-100 dark:bg-white/5">
+                <div className="h-3 overflow-hidden rounded-full bg-rose-100 dark:bg-white/5">
                   <motion.div
                     className={`h-full rounded-full bg-gradient-to-r ${r.color}`}
                     initial={{ width: 0 }}
@@ -325,7 +325,7 @@ function BudgetPanel({ budget, days }) {
       </div>
 
       <div className="flex flex-col gap-4">
-        <div className="rounded-3xl bg-gradient-to-br from-sky-700 to-blue-600 p-6 text-white shadow-xl shadow-sky-300/50">
+        <div className="rounded-3xl bg-gradient-to-br from-rose-700 to-pink-600 p-6 text-white shadow-xl shadow-rose-300/50">
           <p className="text-sm text-white/80">Total estimated cost</p>
           <p className="mt-1 text-4xl font-extrabold">${budget.total.toLocaleString()}</p>
           <p className="mt-2 text-sm text-white/80">≈ ${perDay.toLocaleString()} / day</p>

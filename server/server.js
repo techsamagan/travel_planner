@@ -8,9 +8,9 @@ app.listen(PORT, () => {
   console.log(`\n  Wanderwise API running on http://localhost:${PORT}`);
   console.log(
     `  AI mode: ${
-      process.env.ANTHROPIC_API_KEY
-        ? `Anthropic (${process.env.ANTHROPIC_MODEL || "claude-sonnet-4-6"})`
-        : "mock (set ANTHROPIC_API_KEY to enable real AI)"
+      process.env.OPENAI_API_KEY
+        ? `OpenAI (${process.env.OPENAI_MODEL || "gpt-4o-mini"})`
+        : "mock (set OPENAI_API_KEY to enable real AI)"
     }\n`
   );
 });

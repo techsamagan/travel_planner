@@ -74,7 +74,7 @@ export default function Auth() {
       {/* ---- Left: brand / showcase panel ---- */}
       <div className="relative z-10 hidden flex-col justify-between overflow-hidden p-12 lg:flex">
         <Link to="/" className="flex items-center gap-2 font-bold">
-          <span className="flex h-9 w-9 items-center justify-center rounded-xl bg-gradient-to-br from-sky-700 to-blue-600 shadow-lg shadow-sky-300/50">
+          <span className="flex h-9 w-9 items-center justify-center rounded-xl bg-gradient-to-br from-rose-700 to-pink-600 shadow-lg shadow-rose-300/50">
             <Plane className="h-5 w-5 text-white" />
           </span>
           <span className="text-lg">Wanderwise</span>
@@ -111,7 +111,7 @@ export default function Auth() {
                 transition={{ duration: 0.5, delay: 0.2 + i * 0.1 }}
                 className="flex items-center gap-3 rounded-xl glass px-4 py-3"
               >
-                <row.icon className="h-5 w-5 text-sky-700" />
+                <row.icon className="h-5 w-5 text-rose-700" />
                 <span className="text-sm text-slate-700 dark:text-slate-200">{row.text}</span>
               </motion.div>
             ))}
@@ -130,14 +130,14 @@ export default function Auth() {
           className="w-full max-w-md rounded-3xl glass p-8 shadow-2xl"
         >
           <Link to="/" className="mb-8 flex items-center justify-center gap-2 font-bold lg:hidden">
-            <span className="flex h-9 w-9 items-center justify-center rounded-xl bg-gradient-to-br from-sky-700 to-blue-600">
+            <span className="flex h-9 w-9 items-center justify-center rounded-xl bg-gradient-to-br from-rose-700 to-pink-600">
               <Plane className="h-5 w-5 text-white" />
             </span>
             <span className="text-lg">Wanderwise</span>
           </Link>
 
           {/* Mode toggle */}
-          <div className="mb-7 flex rounded-xl bg-sky-100 dark:bg-white/5 p-1">
+          <div className="mb-7 flex rounded-xl bg-rose-100 dark:bg-white/5 p-1">
             {["login", "register"].map((m) => (
               <button
                 key={m}
@@ -150,7 +150,7 @@ export default function Auth() {
                 {mode === m && (
                   <motion.span
                     layoutId="auth-toggle"
-                    className="absolute inset-0 rounded-lg bg-gradient-to-r from-sky-700 to-blue-600 shadow-lg shadow-sky-300/50"
+                    className="absolute inset-0 rounded-lg bg-gradient-to-r from-rose-700 to-pink-600 shadow-lg shadow-rose-300/50"
                     transition={{ type: "spring", stiffness: 400, damping: 32 }}
                   />
                 )}
@@ -224,7 +224,7 @@ export default function Auth() {
                 <button
                   type="button"
                   onClick={() => setShowPw((s) => !s)}
-                  className="absolute right-3.5 top-1/2 -translate-y-1/2 text-slate-600 dark:text-slate-300 transition-colors hover:text-slate-600 dark:text-slate-300"
+                  className="absolute right-3.5 top-1/2 -translate-y-1/2 text-slate-500 transition-colors hover:text-rose-600 dark:text-slate-300 dark:hover:text-rose-300"
                   tabIndex={-1}
                 >
                   {showPw ? <EyeOff className="h-5 w-5" /> : <Eye className="h-5 w-5" />}
@@ -267,7 +267,7 @@ export default function Auth() {
                 setMode(mode === "login" ? "register" : "login");
                 setError("");
               }}
-              className="font-semibold text-sky-700 transition-colors hover:text-sky-700"
+              className="font-semibold text-rose-700 transition-colors hover:text-rose-700"
             >
               {mode === "login" ? "Sign up" : "Log in"}
             </button>
